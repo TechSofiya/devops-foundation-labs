@@ -1,0 +1,11 @@
+# Ordinary settings. The values in ConfigMap.data must be strings.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio-settings
+data:
+  APP_MODE: practice
+  DB_HOST: db
+  DB_PORT: "5432"
+  DB_USER: practice_user
+  TICKER: AAPL

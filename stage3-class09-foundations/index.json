@@ -1,0 +1,66 @@
+{
+  "title": "Stage 3 \u00b7 Class 9 \u2014 ConfigMaps & Secrets Foundations",
+  "description": "Beginner Kubernetes practice with real commands and automatic checks: create, inspect, wire, change, restart.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Set your namespace",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Create a ConfigMap",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Create a Secret safely",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Connect configuration to a Deployment",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Observe old environment values",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      },
+      {
+        "title": "Roll out the updated setting",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "settings.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "credentials.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "deployment.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        }
+      ]
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
