@@ -1,0 +1,81 @@
+{
+  "title": "Stage 3 · Class 10 — RBAC, ServiceAccounts & Least Privilege",
+  "description": "Hands-on Kubernetes RBAC: discover identity, create permissions, bind them, prove allowed and forbidden actions, and test a namespace-scoped read-only auditor.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Where are you operating?",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Protect something worth reading",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Create a program identity",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Write a narrow Role",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Connect the Role to the identity",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      },
+      {
+        "title": "Prove allowed and forbidden actions",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
+      },
+      {
+        "title": "Give an auditor read-only access",
+        "text": "step7/text.md",
+        "verify": "step7/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "sample-objects.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "serviceaccount.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "role.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "binding.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "auditor.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        }
+      ]
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
