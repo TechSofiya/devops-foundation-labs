@@ -1,0 +1,111 @@
+{
+  "title": "Stage 3 · Class 13 — Persistent Storage, Jobs & CronJobs",
+  "description": "Learner-led Kubernetes lab: observe lost files, bind a static PVC/PV, keep a record through Pod replacement, diagnose a failed Job, and run a CronJob template safely.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Confirm your boundary",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Write a disposable record",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Replace the disposable Pod",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Bind a persistent claim",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Mount storage into a Deployment",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      },
+      {
+        "title": "Replace a controller-managed Pod",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
+      },
+      {
+        "title": "Find the failed one-time Job",
+        "text": "step7/text.md",
+        "verify": "step7/verify.sh"
+      },
+      {
+        "title": "Repair the Service and rerun the Job",
+        "text": "step8/text.md",
+        "verify": "step8/verify.sh"
+      },
+      {
+        "title": "A scheduled Job is still a Job",
+        "text": "step9/text.md",
+        "verify": "step9/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "ephemeral-pod.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "manual-pv.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "pvc.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "ledger-deployment.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "ledger-service.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "one-time-job.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "cronjob.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "statefulset-reference.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "ebs-storageclass-reference.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        }
+      ]
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

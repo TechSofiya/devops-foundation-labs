@@ -1,0 +1,36 @@
+# READ ONLY, DO NOT APPLY. Architecture reference, not a functioning DB replica setup.
+# In the school lesson, volumeClaimTemplates gives EACH ordinal replica its own PVC.
+# Dynamic provisioning of these claims requires a real provisioner; this lab does not install one.
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres-reference
+spec:
+  serviceName: postgres-reference-headless
+  replicas: 2
+  selector:
+    matchLabels:
+      app: postgres-reference
+  template:
+    metadata:
+      labels:
+        app: postgres-reference
+    spec:
+      containers:
+        - name: database
+          image: postgres:16
+          env:
+            - name: POSTGRES_PASSWORD
+              value: PLACEHOLDER_NEVER_USE_AS_REAL_PASSWORD
+          volumeMounts:
+            - name: database-data
+              mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+    - metadata:
+        name: database-data
+      spec:
+        accessModes: [ReadWriteOnce]
+        storageClassName: school-specific-dynamic-storage
+        resources:
+          requests:
+            storage: 1Gi

@@ -1,0 +1,12 @@
+# DO NOT apply this until the Job failure has been observed in Step 7.
+apiVersion: v1
+kind: Service
+metadata:
+  name: ledger-db
+spec:
+  selector:
+    app: ledger-app
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
