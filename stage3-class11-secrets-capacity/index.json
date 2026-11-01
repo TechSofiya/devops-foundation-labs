@@ -1,0 +1,86 @@
+{
+  "title": "Stage 3 · Class 11 — Secrets, Rotation & Resource Boundaries",
+  "description": "Practice ExternalSecret architecture, Kubernetes Secret rotation, requests/limits, and Pending scheduling evidence in a temporary cluster.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Set a safe namespace",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Trace an ExternalSecret without AWS",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Create a demo secret outside Git",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Connect the secret to a container",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Rotate it: live Secret versus running process",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      },
+      {
+        "title": "Restart to receive the new value",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
+      },
+      {
+        "title": "Declare CPU and memory boundaries",
+        "text": "step7/text.md",
+        "verify": "step7/verify.sh"
+      },
+      {
+        "title": "Diagnose a Pod that cannot fit",
+        "text": "step8/text.md",
+        "verify": "step8/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "externalsecret-blueprint.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "portfolio-settings.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "portfolio-app.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "resources-patch.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "scheduling-test.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        }
+      ]
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

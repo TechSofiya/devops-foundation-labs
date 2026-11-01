@@ -1,0 +1,14 @@
+# Strategic merge patch; it changes the LIVE Deployment, not portfolio-app.yaml.
+# In Step 7 replace BOTH TODO values. Other values already set are examples.
+spec:
+  template:
+    spec:
+      containers:
+        - name: portfolio-app
+          resources:
+            requests:
+              cpu: "REPLACE_CPU_REQUEST"  # use 100m
+              memory: "64Mi"
+            limits:
+              cpu: "250m"
+              memory: "REPLACE_MEMORY_LIMIT" # use 128Mi

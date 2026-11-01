@@ -1,0 +1,106 @@
+{
+  "title": "Stage 3 · Class 12 — Namespace Budgets & HPA Boundaries",
+  "description": "Evidence-led Kubernetes practice: patch drift, LimitRange defaults/max, ResourceQuota rejection, HPA CPU arithmetic and scheduler evidence.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Where will your commands act?",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Observe a Deployment before resources",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Patch only the live resource declaration",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "LimitRange: default versus hard maximum",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "ResourceQuota: the Deployment exists, Pod refused",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      },
+      {
+        "title": "HPA: scaling the right object, not a machine",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
+      },
+      {
+        "title": "A different failure: Pod exists, cannot be scheduled",
+        "text": "step7/text.md",
+        "verify": "step7/verify.sh"
+      },
+      {
+        "title": "Cleanup and connect the full architecture",
+        "text": "step8/text.md",
+        "verify": "step8/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "baseline-deployment.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "resources-patch.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "limitrange.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "default-demo-pod.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "over-max-pod.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "resourcequota.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "quota-blocked.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "hpa-demo.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {
+          "file": "placement-test.yaml",
+          "target": "/root",
+          "chmod": "+w"
+        }
+      ]
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
