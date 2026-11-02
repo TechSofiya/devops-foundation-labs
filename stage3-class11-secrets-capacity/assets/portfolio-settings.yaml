@@ -1,0 +1,8 @@
+# Ordinary settings, not passwords. Safe to keep in the exercise repo.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio-settings
+data:
+  TICKER: "AAPL"
+  DB_HOST: "db"
