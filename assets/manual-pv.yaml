@@ -1,0 +1,18 @@
+# LAB ONLY: static PV backed by this single disposable node's directory.
+# Unlike the school's EBS StorageClass, this does NOT create an AWS disk.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: foundation13-pv
+  labels:
+    training: foundation13
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: ""
+  hostPath:
+    path: /var/tmp/foundation13-ledger-data
+    type: DirectoryOrCreate

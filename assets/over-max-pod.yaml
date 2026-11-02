@@ -1,0 +1,18 @@
+# Admission refusal: container CPU limit exceeds LimitRange max of 1 CPU.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: exceeds-container-max
+spec:
+  restartPolicy: Never
+  containers:
+    - name: demo
+      image: busybox:1.36
+      command: ["sh", "-c", "sleep 3600"]
+      resources:
+        requests:
+          cpu: 100m
+          memory: 64Mi
+        limits:
+          cpu: "2"
+          memory: 128Mi

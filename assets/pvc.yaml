@@ -1,0 +1,13 @@
+# The namespace-scoped claim for the pre-created static PV.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ledger-data
+spec:
+  storageClassName: ""             # Do not use an unknown default provisioner.
+  volumeName: foundation13-pv     # Select this static PV.
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 128Mi

@@ -1,0 +1,20 @@
+# A DIFFERENT identity for a safe read-only investigator.
+# Fill the TODOs to bind the existing built-in ClusterRole 'view'
+# ONLY IN THIS NAMESPACE. This file does not create a ClusterRole.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: audit-agent
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: audit-agent-view
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  # TODO: kind: ClusterRole
+  # TODO: name: view
+subjects:
+  - kind: ServiceAccount
+    name: audit-agent
+    namespace: foundation10

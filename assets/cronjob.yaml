@@ -1,0 +1,19 @@
+# Scheduled task. Kept suspended so no uncontrolled repeated Jobs start.
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: nightly-ledger
+spec:
+  schedule: "0 2 * * *"    # 02:00 in controller time zone (usually UTC).
+  suspend: true
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: housekeeping
+              image: busybox:1.36
+              command: ["sh", "-c", "echo NIGHTLY_TASK_OK"]

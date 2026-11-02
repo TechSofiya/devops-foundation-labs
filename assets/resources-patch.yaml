@@ -1,0 +1,14 @@
+# Strategic merge patch — edit the four trial resource numbers.
+# No apiVersion/kind: kubectl patch applies it to the named live Deployment.
+spec:
+  template:
+    spec:
+      containers:
+        - name: capacity-app
+          resources:
+            requests:
+              cpu: 50m         # TODO: target 100m
+              memory: 64Mi     # TODO: target 128Mi
+            limits:
+              cpu: 150m        # TODO: target 250m
+              memory: 128Mi    # TODO: target 256Mi

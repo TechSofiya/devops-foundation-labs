@@ -1,0 +1,12 @@
+# READ ONLY, DO NOT APPLY. School-style AWS StorageClass reference.
+# Requires a provisioner and AWS setup absent from the temporary Killercoda backend.
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: unit6-ebs-reference-only
+provisioner: ebs.csi.eks.amazonaws.com
+parameters:
+  type: gp3
+  encrypted: "true"
+volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Delete

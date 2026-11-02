@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: team-budget
+spec:
+  hard:
+    requests.cpu: "2"       # TODO: 500m
+    requests.memory: 2Gi    # TODO: 1Gi
+    limits.cpu: "4"         # TODO: 2
+    limits.memory: 4Gi      # TODO: 2Gi
+    pods: "20"             # TODO: 8
