@@ -1,0 +1,10 @@
+# The RULES: start with permission to GET an individual ConfigMap.
+# In Step 6, you will expand verbs without adding Secrets or write access.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: configmap-reader
+rules:
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get"]
