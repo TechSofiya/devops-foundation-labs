@@ -1,0 +1,18 @@
+# Fictional settings ONLY. This file is not the sensitive school app secret.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio-settings
+data:
+  REPORT_NAME: "practice-report"
+  CURRENCY: "USD"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: demo-db
+  labels:
+    training: "fake-only"
+type: Opaque
+stringData:
+  DB_PASSWORD: "fake-demo-do-not-reuse"

@@ -1,0 +1,14 @@
+# The CONNECTION: grant configmap-reader to the ServiceAccount report-bot.
+# Fill BOTH TODO fields before applying. Do not apply with missing fields.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: report-bot-reads-config
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  # TODO: name: <the Role's metadata.name>
+subjects:
+  - kind: ServiceAccount
+    # TODO: name: <the ServiceAccount's metadata.name>
+    namespace: foundation10
